@@ -34,6 +34,8 @@ Download the Conformer pretrained models from official repository and keep under
 
 **[Conformer-B](https://drive.google.com/file/d/1oeQ9LSOGKEUaYGu7WTlUGl3KDsQIi0MA/view)**  **[Conformer-S](https://drive.google.com/file/d/1mpOlbLaVxOfEwV4-ha78j_1Ebqzj2B83/view)**  **[Conformer-Ti](https://drive.google.com/file/d/19SxGhKcWOR5oQSxNUWUM2MGYiaWMrF1z/view)** 
 
+Place the pretrained models under path `./preload`
+
 You can easily train just by
 
 ```
