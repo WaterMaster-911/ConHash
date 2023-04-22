@@ -8,7 +8,7 @@
 # **Supervised Conformer Hashing with Entropy-Balanced Loss for Large-Scale Image Retrieval(ConHash)**
 
 
-![Pipeline](.\pic\Pipeline.png)
+![Pipeline](https://github.com/WaterMaster-911/ConHash/blob/main/pic/Pipeline.png)
 
 # **Requirements**
 
