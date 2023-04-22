@@ -4,7 +4,7 @@
 
 
 
-# **Supervised Conformer Hashing with Entropy-Balanced Loss for Large-Scale Image Retrieval**
+# **Supervised Conformer Hashing with Entropy-Balanced Loss for Large-Scale Image Retrieval**(ConHash)
 
 
 
@@ -27,6 +27,22 @@ There are three different configurations for cifar10
 - config["dataset"]="cifar10-2" will use 10000 images (1000 images per class) as the query set, 50000 images( 5000 images per class) as training set and database.
 
 You can download ImageNet [here](https://github.com/thuml/HashNet/tree/master/pytorch) where is the data split copy from,Place the imageNet dataset under path `./dataset/imagenet`
+
+```
+./dataset/imagenet
+  train/
+    class1/
+      img1.jpeg
+    class2/
+      img2.jpeg
+  val/
+    class1/
+      img3.jpeg
+    class/2
+      img4.jpeg
+```
+
+
 
 ## How to Run
 
