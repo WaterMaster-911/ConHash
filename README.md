@@ -6,7 +6,7 @@
 
 # **Supervised Conformer Hashing with Entropy-Balanced Loss for Large-Scale Image Retrieval**(ConHash)
 
-
+![Pipeline](.\pic\Pipeline.png)
 
 # **Requirements**
 
