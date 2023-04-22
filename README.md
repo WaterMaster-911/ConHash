@@ -18,12 +18,6 @@ pip install timm==0.3.2
 pip install torchvision==0.5.0
 ```
 
-## How to Run
-
-Download the Conformer pretrained models from official repository and keep under pretrained Conformer directory:
-
-**[Conformer-B](https://drive.google.com/file/d/1oeQ9LSOGKEUaYGu7WTlUGl3KDsQIi0MA/view)**  **[Conformer-S](https://drive.google.com/file/d/1mpOlbLaVxOfEwV4-ha78j_1Ebqzj2B83/view)**  **[Conformer-Ti](https://drive.google.com/file/d/19SxGhKcWOR5oQSxNUWUM2MGYiaWMrF1z/view)** 
-
 ## Dataset
 
 There are three different configurations for cifar10
@@ -34,7 +28,11 @@ There are three different configurations for cifar10
 
 You can download ImageNet [here](https://github.com/thuml/HashNet/tree/master/pytorch) where is the data split copy from,Place the imageNet dataset under path `./dataset/imagenet`
 
-## Train
+## How to Run
+
+Download the Conformer pretrained models from official repository and keep under pretrained Conformer directory:
+
+**[Conformer-B](https://drive.google.com/file/d/1oeQ9LSOGKEUaYGu7WTlUGl3KDsQIi0MA/view)**  **[Conformer-S](https://drive.google.com/file/d/1mpOlbLaVxOfEwV4-ha78j_1Ebqzj2B83/view)**  **[Conformer-Ti](https://drive.google.com/file/d/19SxGhKcWOR5oQSxNUWUM2MGYiaWMrF1z/view)** 
 
 You can easily train just by
 
