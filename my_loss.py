@@ -48,7 +48,23 @@ class My_Loss(nn.Module):
         self.U = (self.U.abs() > self.m).float() * self.U.sign()
         self.target_vectors = (self.Y.t() @ self.U).sign()
 
-    
+    def balanced_prob_loss(self,X):
+        """
+        计算平衡概率损失函数。
+        参数：
+        X：二维numpy数组，表示数据集，每行为一个哈希码，每列为哈希码的一位，取值为-1或1。
+        返回值：
+        loss：平衡概率损失函数的值。
+        """
+        bit = X.shape[1]  # 哈希码长度
+        S = X.shape[0]    # 数据集大小
+#         print("X:",X.shape)
+        X = torch.sign(X)
+        P_minus_1 = torch.sum(X == -1) / (2 * bit * S)  # -1出现概率
+        P_1 = torch.sum(X == 1) / (2 * bit * S)         # 1出现概率
+        b_loss = torch.abs(-P_minus_1 * torch.log2(P_minus_1) + P_1 * torch.log2(P_1))
+        return b_loss
+
 
     def quanti_loss(self, hash_out):
         regular_term = (hash_out - hash_out.sign()).pow(2).mean()
@@ -73,9 +89,11 @@ class My_Loss(nn.Module):
         self.Y[ind, :] = target.float()
         t = self.label2center(target)
         polarization_loss_trans = (self.m - hash_out[1] * t).clamp(0).mean()
+        
+        full_hash = torch.cat([hash_out[0], hash_out[1]], dim=1)
+        balanced_loss = self.balanced_prob_loss(full_hash)
+                
+        loss = cls_loss + self.alph * (polarization_loss_conv + polarization_loss_trans) + self.beta * balanced_loss 
 
-        loss = cls_loss + self.alph * (polarization_loss_conv + polarization_loss_trans) + self.beta * (quanti_loss_conv + quanti_loss_trans) 
-
-
-        return [polarization_loss_conv,polarization_loss_trans], [quanti_loss_conv,quanti_loss_trans], cls_loss, loss
+        return loss
 

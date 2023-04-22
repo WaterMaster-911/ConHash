@@ -1,3 +1,9 @@
+# --------------------------------------------------------
+# Conformer
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
+
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -320,8 +326,19 @@ class Conformer(nn.Module):
         self.trans_dpr = [x.item() for x in torch.linspace(0, drop_path_rate, depth)]  # stochastic depth decay rule
 
         # hash head
-        self.hash_layer_trans = nn.Linear(embed_dim, int((self.hash_length)/2) )
-        self.hash_layer_conv = nn.Linear(int(256 * channel_ratio), int((self.hash_length)/2))
+#         self.hash_layer_trans = nn.Linear(embed_dim, int((self.hash_length)/2) )
+#         self.hash_layer_conv = nn.Linear(int(256 * channel_ratio), int((self.hash_length)/2))        
+        self.hash_layer_trans = nn.Sequential(
+            nn.Dropout(),
+            nn.ReLU(inplace=True),
+            nn.Linear(embed_dim, int((self.hash_length)/2)),
+        )
+        
+        self.hash_layer_conv = nn.Sequential(
+            nn.Dropout(),
+            nn.ReLU(inplace=True),
+            nn.Linear(int(256 * channel_ratio), int((self.hash_length)/2)),
+        )      
 
         # Classifier head
         self.trans_norm = nn.LayerNorm(embed_dim)

@@ -1,7 +1,0 @@
-Files already downloaded and verified
-train_dataset 5000
-test_dataset 1000
-database_dataset 54000
-==> Loading from pretrained model..
-DSH-ConFormer[ 1/180][19:05:41] bit:64, dataset:cifar, training.... loss:0.000
-Conformer.py failed to run
