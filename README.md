@@ -15,7 +15,6 @@ install PyTorch 1.7.0+ and torchvision 0.8.1+ and [pytorch-image-models 0.3.2](h
 ```
 conda install -c pytorch pytorch torchvision
 pip install timm==0.3.2
-pip install torchvision==0.5.0
 ```
 
 ## Dataset
