@@ -4,7 +4,12 @@
 
 
 
+<<<<<<< HEAD
 # **Supervised Conformer Hashing with Entropy-Balanced Loss for Large-Scale Image Retrieval**(ConHash)
+=======
+# **Supervised Conformer Hashing with Entropy-Balanced Loss for Large-Scale Image Retrieval(ConHash)**
+
+>>>>>>> 515d6a87843f4c6047a3cff4114bb18bb75ada0d
 
 ![Pipeline](.\pic\Pipeline.png)
 
@@ -15,7 +20,6 @@ install PyTorch 1.7.0+ and torchvision 0.8.1+ and [pytorch-image-models 0.3.2](h
 ```
 conda install -c pytorch pytorch torchvision
 pip install timm==0.3.2
-pip install torchvision==0.5.0
 ```
 
 ## Dataset
