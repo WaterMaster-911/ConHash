@@ -4,7 +4,7 @@
 
 
 
-# **Supervised Conformer Hashing with Entropy-Balanced Loss for Large-Scale Image Retrieval**
+# **Supervised Conformer Hashing with Entropy-Balanced Loss for Large-Scale Image Retrieval(ConHash)**
 
 
 
