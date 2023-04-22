@@ -4,12 +4,9 @@
 
 
 
-<<<<<<< HEAD
-# **Supervised Conformer Hashing with Entropy-Balanced Loss for Large-Scale Image Retrieval**(ConHash)
-=======
+
 # **Supervised Conformer Hashing with Entropy-Balanced Loss for Large-Scale Image Retrieval(ConHash)**
 
->>>>>>> 515d6a87843f4c6047a3cff4114bb18bb75ada0d
 
 ![Pipeline](.\pic\Pipeline.png)
 
