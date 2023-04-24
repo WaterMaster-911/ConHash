@@ -66,9 +66,6 @@ class My_Loss(nn.Module):
         return b_loss
 
 
-    def quanti_loss(self, hash_out):
-        regular_term = (hash_out - hash_out.sign()).pow(2).mean()
-        return regular_term
 
     def forward(self, hash_out, cls_out,target,ind):
         lables = torch.argmax(target,dim=1)
@@ -76,9 +73,6 @@ class My_Loss(nn.Module):
         
         cls_loss = cls_loss +  0.5 *  self.classify_loss_fun(cls_out[1],lables)
 
-
-        quanti_loss_conv = self.quanti_loss(hash_out[0])
-        quanti_loss_trans = self.quanti_loss(hash_out[1])
 
         self.U[ind, :] = hash_out[0].data
         self.Y[ind, :] = target.float()
