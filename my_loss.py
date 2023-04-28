@@ -50,18 +50,18 @@ class My_Loss(nn.Module):
 
     def balanced_prob_loss(self,X):
         """
-        计算平衡概率损失函数。
-        参数：
-        X：二维numpy数组，表示数据集，每行为一个哈希码，每列为哈希码的一位，取值为-1或1。
-        返回值：
-        loss：平衡概率损失函数的值。
+        Calculate the equilibrium probability loss function
+        Parameters:
+        X: A two-dimensional numpy array representing a data set with one hash code per row and one bit of the hash code per column, with the value -1 or 1.
+        Return value:
+        loss: Indicates the value of the balanced probability loss function.
         """
         bit = X.shape[1]  # 哈希码长度
         S = X.shape[0]    # 数据集大小
 #         print("X:",X.shape)
         X = torch.sign(X)
-        P_minus_1 = torch.sum(X == -1) / (2 * bit * S)  # -1出现概率
-        P_1 = torch.sum(X == 1) / (2 * bit * S)         # 1出现概率
+        P_minus_1 = torch.sum(X == -1) / (bit * S)  # -1出现概率
+        P_1 = torch.sum(X == 1) / (bit * S)         # 1出现概率
         b_loss = torch.abs(-P_minus_1 * torch.log2(P_minus_1) + P_1 * torch.log2(P_1))
         return b_loss
 
