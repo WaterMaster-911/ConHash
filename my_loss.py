@@ -56,9 +56,8 @@ class My_Loss(nn.Module):
         Return value:
         loss: Indicates the value of the balanced probability loss function.
         """
-        bit = X.shape[1]  # 哈希码长度
-        S = X.shape[0]    # 数据集大小
-#         print("X:",X.shape)
+        bit = X.shape[1]  
+        S = X.shape[0]   
         X = torch.sign(X)
         P_minus_1 = torch.sum(X == -1) / (bit * S)  # -1出现概率
         P_1 = torch.sum(X == 1) / (bit * S)         # 1出现概率
